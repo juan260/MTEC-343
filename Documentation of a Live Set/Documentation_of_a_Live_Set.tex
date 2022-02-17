@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Documentation of a Live Set: The Kitchen}
+
+\author{Juan Riera Gomez}
+\date{February 2022}
+
+\begin{document}
+
+\maketitle
+\section{Introduction}
+As part of our MTEC-343 course on Live Coding students have been exploring MiniTidal in the Estuary environment. Along the past weeks since the start of the course students would learn deeper functionality and investigate by themselves, having freedom of experimentation sometimes during class with the supervision of Professor Rome, and always out of it. Encouraged to keep exploring, students were assigned to bring some prepared code lines to the class on February 10th to create a live set with 3 partners.
+
+In that class, the team was assembled randomly by the professor. Claire AuTorino, Juan Riera Gomez (me) and Thomas Michaels were the Chefs, and the live set was called The Kitchen. After a couple of failed trials to create a server in Estuary that worked for the three of us, presumably because of network problems, we took a deep dive into MiniTidal.
+
+\section{The Set}
+During this live performance, the chefs began exploring some of the functionality seen in class, using pieces of code from the README files in which the professor had written each class contents, and pieces of code that they had thought of themselves at home. One example of those codes would the the following:
+
+\begin{verbatim}
+fast 4 $ note (arp "thumbdown" "<a'maj7*4 e'maj7*2>") # s"sine"
+fast 4 $ note (arp "diverge" "<a'maj7*4 e'maj7*2>") # s"sine"
+fast 4 $ note (arp "pinkyup" "<a'maj7*4 e'maj7*2>") # s"sine"
+\end{verbatim}
+
+In the previous code, we experimented with parallel arpeggiation algorythms of the same chords, creating moving harmonies. We also experimented with some drums, trying to have the hihat at irregular places but steady kick and snare drums like so:
+
+\begin{verbatim}
+stack [s "drum*8" # n "0 ~ 1 ~", s "drum*16" # n "2 2 2 2"]
+stack[s"drum:9(10,4)", s"bd*4"]
+s"~ ~ ~ ~ drum:1 ~ ~ ~  ~ ~ ~ drum:1 ~"
+\end{verbatim}
+
+But then we started experimenting with some of the libraries that we hadn't seen in class and things started to get more and more interesting:
+
+\begin{verbatim}
+stack[s"birds3*10" ,s"birds"] # gain 0.7
+s"roll"
+s"[monsterb*4]*2" # n "0 1 2 3"
+stack[s"speech:1(10,3)",s"speech:3(14,15)",s"speech:2(2,3)"]
+\end{verbatim}
+
+During this whole process we didn't communicate in real life. All of the communication was done through the Estuary chat and it was very scarce. Our real communication was the music that we were making. Sometimes we would comment things like \textit{great} or \textit{awesome}, but we never used any negative words to describe the sounds. It was the ideal creative environment. We also didn't share cells, each one of us naturally had a set of cells for themselves and we didn't interfere with each other until this happened:
+
+\begin{verbatim}
+stack[s"speech:9(4,5)"#pan 1, 
+\end{verbatim}
+
+We started playing with panning and the situation escalated, I started changing the cells of the others to create an interesting stereo experience, and since I didn't know how to automate a moving object in the stereo field, I would change the numbers increasingly every half second or so, ranging from 0 to 1, creating a dynamic stereo field. We also started experimenting with other harmonies and textures:
+
+\begin{verbatim}
+s"speech:2(7,4)"#pan 0] # gain 0.6
+note (arp "updown" "<a'dim*10>" ) # s "piano" # gain 0.8 # pan 1
+\end{verbatim}
+
+\section{The documentation}
+
+For the creation of this document we created a discord server through which we shared the code that we had saved, and we talked about how to make a document like this. This is the result of all of this work.
+\end{document}
+
