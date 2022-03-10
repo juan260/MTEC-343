@@ -71,7 +71,9 @@ SynthDef(\softKick, {| freqA= 0, freqB=0, freqC = 10, freqDur1=0.01, freqDur2 = 
 ~~~
 
 * Throw in some soft kicks with interpreter's taste:
-    ~softKick.play();
+~~~
+~softKick.play();
+~~~
 
 * Throw in a hard kick:
 ~~~
@@ -95,7 +97,17 @@ SynthDef(\bass, { | freq = 440, filterFreqMult = 5, amp = 3, resonance = 1 |
 	\dur, Pseq([0.5],inf).trace
 );
 ~~~
+* Change the parameter modAmp in the SynthDef of \myFm to other cool fun values like:
+~~~
+SynthDef(\myFm, { | freq = 440, modFreqMul = 2, amp = 0.2, modAmp = 0.4, randomPanning = 0.5|
 
+var modulator = SinOsc.kr(freq*modFreqMul) * modAmp;
+var env = EnvGen.kr(Env.triangle(0.3,1),doneAction:2);
+var carrier = SinOsc.ar(freq+(modulator*300))*env*amp;
+//Secret weapon carrier = carrier.pow(MouseY.kr(0.1,1.0));
+Out.ar(a, Pan2.ar(carrier, Rand.new(-0.9, 0.9)));
+}).add;
+~~~
 * Stop the hard kick and the fm sequence:
 ~~~
 ~dancingplay.stop;
@@ -125,7 +137,9 @@ filteredOsc=filteredOsc.cubed;
 ~~~
 
 * Stop the bass:
-    ~bassplay.stop;
+~~~
+~bassplay.stop;
+~~~
 
 ~~~
 ~dancingplay = ~dancing.play;
