@@ -97,9 +97,9 @@ SynthDef(\bass, { | freq = 440, filterFreqMult = 5, amp = 3, resonance = 1 |
 	\dur, Pseq([0.5],inf).trace
 );
 ~~~
-* Change the parameter modAmp in the SynthDef of \myFm to other cool fun values like:
+* Change the parameters modAmp and modFreqMul in the SynthDef of \myFm to other cool fun values like:
 ~~~
-SynthDef(\myFm, { | freq = 440, modFreqMul = 2, amp = 0.2, modAmp = 0.4, randomPanning = 0.5|
+SynthDef(\myFm, { | freq = 440, modFreqMul = 3, amp = 0.2, modAmp = 0.4, randomPanning = 0.5|
 
 var modulator = SinOsc.kr(freq*modFreqMul) * modAmp;
 var env = EnvGen.kr(Env.triangle(0.3,1),doneAction:2);
