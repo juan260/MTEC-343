@@ -2,23 +2,25 @@
 
 This is the set of instructions needed to perform the live set Secret Weapon.
 * Start supercollider server.
-    s.boot;
+~~~
+s.boot;
+~~~
 * Define the necessary busses and the sidechain compressor:
 ~~~
-    a = Bus.audio(s, 2);
-    b = Bus.audio(s, 2);
+a = Bus.audio(s, 2);
+b = Bus.audio(s, 2);
 
-    z = {
-        var input = In.ar(a, 2);
-        var kick = In.ar(b, 2);
-        var thresh = 0.01;
-        var compression = 0.2;
-        var attack = 0.01;
-        var release = 0.02;
-        var snd = Compander.ar(FreeVerb2.ar(input[0], input[1]), kick, thresh, 1, compression, attack, release)*5;
-        Out.ar(0, snd);
-    }.play;
-    s.scope;
+z = {
+var input = In.ar(a, 2);
+var kick = In.ar(b, 2);
+var thresh = 0.01;
+var compression = 0.2;
+var attack = 0.01;
+var release = 0.02;
+var snd = Compander.ar(FreeVerb2.ar(input[0], input[1]), kick, thresh, 1, compression, attack, release)*5;
+Out.ar(0, snd);
+}.play;
+s.scope;
 ~~~
 * Define the FM synth and it's sequence:
 ~~~
