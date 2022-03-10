@@ -2,6 +2,7 @@
 
 This is the set of instructions needed to perform the live set Secret Weapon.
 * Start supercollider server.
+    s.boot;
 * Define the necessary busses and the sidechain compressor:
 ~~~
     a = Bus.audio(s, 2);
@@ -17,6 +18,7 @@ This is the set of instructions needed to perform the live set Secret Weapon.
         var snd = Compander.ar(FreeVerb2.ar(input[0], input[1]), kick, thresh, 1, compression, attack, release)*5;
         Out.ar(0, snd);
     }.play;
+    s.scope;
 ~~~
 * Define the FM synth and it's sequence:
 ~~~
