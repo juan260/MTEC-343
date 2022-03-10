@@ -128,6 +128,7 @@ SynthDef(\snare, { | amp = 1.0 |
 	var oscillator = WhiteNoise.ar()*amp;
 	var env = EnvGen.kr(Env([0.001, 15000, 200, 3000, 0.001], [0.012,0.018, 0.018, 0.1], 'exp') ,doneAction:2);
 	var filter = HPF.ar(LPF.ar(oscillator, env), 200);
+	//Secret weapon filter = filter.pow(MouseY.kr(0.1,1.0));
 	Out.ar(0, filter!2);
 }).add;
 
@@ -185,4 +186,6 @@ SynthDef(\snare, { | amp = 1.0 |
 * and replacing all the text (use Replace All function of the editor) _//Secret weapon_ with a space. Then run the code defining the superweapon again. You should keep your mouse down when you do this, because when you move it up it will distort the sounds. 
 
 * Make a big crescendo at your taste, and stop the sound by killing the server:
-    Server.killAll
+~~~
+Server.killAll
+~~~
