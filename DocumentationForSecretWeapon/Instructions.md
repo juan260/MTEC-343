@@ -108,12 +108,15 @@ var carrier = SinOsc.ar(freq+(modulator*300))*env*amp;
 Out.ar(a, Pan2.ar(carrier, Rand.new(-0.9, 0.9)));
 }).add;
 ~~~
-* Stop the hard kick and the fm sequence:
+* Stop the hard kick sequence:
 ~~~
-~dancingplay.stop;
 ~hardKickplay.stop;
 ~~~
 
+* Stop the hard fm sequence:
+~~~
+~dancingplay.stop;
+~~~
 * Throw in the bass:
 ~~~
 ~bassplay = ~bass.play;
