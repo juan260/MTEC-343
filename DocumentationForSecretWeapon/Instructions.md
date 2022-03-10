@@ -22,24 +22,24 @@ This is the set of instructions needed to perform the live set Secret Weapon.
 ~~~
 * Define the FM synth and it's sequence:
 ~~~
-    SynthDef(\myFm, { | freq = 440, modFreqMul = 2, amp = 0.2, modAmp = 0.0, randomPanning = 0.5|
+SynthDef(\myFm, { | freq = 440, modFreqMul = 2, amp = 0.2, modAmp = 0.0, randomPanning = 0.5|
 
-        var modulator = SinOsc.kr(freq*modFreqMul) * modAmp;
-        var env = EnvGen.kr(Env.triangle(0.3,1),doneAction:2);
-        var carrier = SinOsc.ar(freq+(modulator*300))*env*amp;
-        //Secret weapon carrier = carrier.pow(MouseY.kr(0.1,1.0));
-        Out.ar(a, Pan2.ar(carrier, Rand.new(-0.9, 0.9)));
-    }).add;
+var modulator = SinOsc.kr(freq*modFreqMul) * modAmp;
+var env = EnvGen.kr(Env.triangle(0.3,1),doneAction:2);
+var carrier = SinOsc.ar(freq+(modulator*300))*env*amp;
+//Secret weapon carrier = carrier.pow(MouseY.kr(0.1,1.0));
+Out.ar(a, Pan2.ar(carrier, Rand.new(-0.9, 0.9)));
+}).add;
 
-    ~dancing = Pbind(
-	\instrument, \myFm,
-	\midinote, Pseq([Pshuf([55, 60, 63, 67],4),Pshuf([55, 60, 63, 67],4)-3,Pshuf([55, 60, 63, 67],4)-6],inf).trace,
-	\dur, Pseq([0.1, 0.2, 0.3, 0.4],inf).trace
-    );      
+~dancing = Pbind(
+\instrument, \myFm,
+\midinote, Pseq([Pshuf([55, 60, 63, 67],4),Pshuf([55, 60, 63, 67],4)-3,Pshuf([55, 60, 63, 67],4)-6],inf).trace,
+\dur, Pseq([0.1, 0.2, 0.3, 0.4],inf).trace
+);      
 ~~~
 * Play the sequence:
 ~~~
-    ~dancingplay = ~dancing.play;
+~dancingplay = ~dancing.play;
 ~~~
 * Define the kicks and their sequences: 
 ~~~
