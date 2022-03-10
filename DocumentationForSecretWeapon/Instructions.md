@@ -35,9 +35,9 @@ Out.ar(a, Pan2.ar(carrier, Rand.new(-0.9, 0.9)));
 
 ~dancing = Pbind(
 \instrument, \myFm,
-\midinote, Pseq([Pshuf([55, 60, 63, 67],4),Pshuf([55, 60, 63, 67],4)-3,Pshuf([55, 60, 63, 67],4)-6],inf).trace,
+\midinote, Pseq([Pshuf([55, 59, 62, 66],4),Pshuf([55, 59, 62, 66],4)-3,Pshuf([55, 59, 62, 66],4)-6],inf).trace,
 \dur, Pseq([0.1, 0.2, 0.3, 0.4],inf).trace
-);      
+);    
 ~~~
 * Play the sequence:
 ~~~
