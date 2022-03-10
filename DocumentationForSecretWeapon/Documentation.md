@@ -186,7 +186,7 @@ SynthDef(\snare, { | amp = 1.0 |
 }).add;
 ~~~
 
-* and replacing all the text (use Replace All function of the editor) _//Secret weapon_ with a space. Then run the code defining the superweapon again. You should keep your mouse down when you do this, because when you move it up it will distort the sounds. 
+* and replacing all the text (use Replace All function of the editor) _//Secret weapon_ with a space. Then run the code defining the superweapon (the previous SynthDefs) again. You should keep your mouse at the top of the screen when you do this, because when you move it up it will distort the sounds. 
 
 * Make a big crescendo at your taste, and stop the sound by killing the server:
 ~~~
