@@ -1,6 +1,9 @@
 # Secret Weapon
+## Documentation file
 
-This is the set of instructions needed to perform the live set Secret Weapon.
+This is the set of instructions needed to perform the live set Secret Weapon. It has been developed in Super Collider language and is meant to be interpreted in that environment. Specifically, it is meant to be interpreted in the SuperCollider IDE.
+
+### Instructions for the interpreter
 * Start supercollider server.
 ~~~
 s.boot;
