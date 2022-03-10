@@ -134,7 +134,7 @@ SynthDef(\snare, { | amp = 1.0 |
 ~snare = Pbind(\instrument, \snare, \amp, Pseq([0.0, 0.4], inf), \dur, Pseq([0.5], inf));
 ~~~
 
-* Add the following line before the text _Secret Weapon_ in the bass:
+* Add the following line before the text _Secret Weapon_ in the bass, reexecute the SynthDef and delete that line:
 ~~~
 filteredOsc=filteredOsc.cubed;
 ~~~
